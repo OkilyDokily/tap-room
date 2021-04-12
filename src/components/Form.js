@@ -1,50 +1,55 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid'
 
 Form.propTypes = {
-
+  onAddKegs: PropTypes.func
 };
 
-const addKegs = (e) => {
-  e.preventDefaults();
-  let obj = 
-  {
-    name: document.getElementById("id").value,
-    brand: document.getElementById("brand").value,
-    price: ParseInt(document.getElementById("price").value),
-    alcoholContent: ParseInt(document.getElementById("alcoholcontent").value),
-    kegs: ParseInt(document.getElementById("kegs").value),
-  }
-  props.addKegs(obj);
-}
+
 
 function Form(props) {
+
+  const addKeg = (e) => {
+    e.preventDefault();
+    let obj =
+    {
+      id: (props.edit.edit) ? props.edit.details.id : v4(),
+      name: document.getElementById("name").value,
+      brand: document.getElementById("brand").value,
+      price: parseFloat(document.getElementById("price").value),
+      alcoholContent: parseFloat(document.getElementById("alcoholcontent").value),
+      pints: 124,
+    }
+    if (props.edit.edit) {
+      props.onEditKeg(obj)
+    }
+    else {
+      props.onAddKeg(obj);
+    }
+  }
   return (
     <div>
-      <form onSubmit={addKegs}>
-        <div id="name">
+      <form onSubmit={addKeg}>
+        <div >
           <label>Name</label>
-          <input type="text" >
+          <input type="text" id="name" defaultValue={props.edit.edit ? props.edit.details.name : null} />
         </div>
-          <div id="brand">
-            <label>Brand</label>
-            <input type="text" >
+        <div >
+          <label>Brand</label>
+          <input type="text" id="brand" defaultValue={props.edit.edit ? props.edit.details.brand : null} />
         </div>
-            <div id="price">
-              <label>Price</label>
-              <input type="number" step="0.01">
+        <div >
+          <label>Price</label>
+          <input type="number" step="0.01" id="price" defaultValue={props.edit.edit ? props.edit.details.price : null} />
         </div>
-              <div id="alcoholcontent">
-                <label>Alcohol Content</label>
-                <input type="number" step="0.01">
+        <div >
+          <label>Alcohol Content</label>
+          <input type="number" step="0.01" id="alcoholcontent" defaultValue={props.edit.alcoholContent ? props.edit.details.name : null} />
         </div>
-                <div id="kegs">
-                  <label>Kegs</label>
-                  <input type="number" min="1">
-        </div>
-                  <input type="submit" value="Add Kegs to database" />
-                  </form>
-              </div>
+        <input type="submit" id="kegs" value={props.edit.edit ? "Edit Keg" : "Add Keg"} />
+      </form>
+    </div>
   );
 }
 

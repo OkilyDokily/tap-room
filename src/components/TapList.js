@@ -10,7 +10,7 @@ TapList.propTypes = {
 function TapList(props) {
   return (
     <div>
-      {props.tapList.map(x => <TapItem showDetails= {props.onShowDetails} details = {x}/>)}
+      {props.tapList.map(x => <TapItem purchasePint={props.onPurchasePint} showDetails= {props.onShowDetails} details = {x}/>)}
     </div>
   );
 }
