@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid'
 
 Form.propTypes = {
+  edit:PropTypes.object,
   onAddKegs: PropTypes.func
 };
 

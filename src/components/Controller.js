@@ -75,20 +75,45 @@ export default class Controller extends Component {
   }
 
   render() {
+
+    const tapListButton = {
+      display:"block",
+      width: "100%",
+      height: "50px",
+      padding:'0',
+      marginLeft:"3px",
+      marginTop:"20px"
+    }
+
+    const detailsButtons = {
+      display:"flex",
+      height: "30px",
+      marginTop: "10px"
+    }
+
+    const returnToListButton = {
+      display:"block",
+      width:"100%"
+
+    }
     switch (this.state.currentView) {
       case "TapList":
         return (
           <div>
             <TapList onPurchasePint={this.handlePurchasePint} onShowDetails = {this.handleShowDetails} tapList={this.state.tapList} />
-            <button onClick={()=>this.changeCurrentView("Form")}>Add Keg</button>
+            <button style={tapListButton} onClick={()=>this.changeCurrentView("Form")}>Add Keg</button>
           </div>
         )
       case "Details":
         return (
           <div>
             <Details details={this.state.details} onEdit={this.changeCurrentView}/>
-            <button onClick={() => this.handleDeleteKeg(this.state.details.id)}>Delete Keg</button>
-            <button onClick={() => this.changeCurrentView("TapList")}>Return to List</button>
+            <div style={detailsButtons} id="details-buttons">
+              <button onClick={() => this.changeCurrentView("Edit")}>Edit</button>
+              <button onClick={() => this.handleDeleteKeg(this.state.details.id)}>Delete Keg</button>
+            </div>
+            <br/>
+            <button style={tapListButton} onClick={() => this.changeCurrentView("TapList")}>Return to List</button>
           </div>
         )
       case "Form":

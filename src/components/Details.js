@@ -5,19 +5,44 @@ Details.propTypes = {
   details:PropTypes.object,
 };
 
+
+
 function Details(props) {
+
+  const detailsDiv = {
+    display: "grid",
+    width: "100%",
+    marginBottom: "4px",
+    border: "solid black 1px",
+    padding: "4px",
+    paddingRight: "0",
+    gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr"
+  }
+
+  const nameDiv = {
+    ...detailsDiv,
+    border:"none",
+    borderBottom:"solid black 1px"
+  }
+
+
   return (
-    <div>
-      <div>
-        <p>{props.details.name}</p>
-        <p>{props.details.brand}</p>
-        <p>{props.details.price}</p>
-        <p>{props.details.alcoholContent}</p>
-        <p>{(props.details.pints <= 0) ? "Out Of Stock" : ("pints: " + props.details.pints)}</p>
+    <div id="details">
+      <div style={nameDiv} >
+        <div>Name</div>
+        <div>Brand</div>
+        <div>Price</div>
+        <div>Alcohol Content</div>
+        <div>Pints Left</div>
       </div>
-      <div>
-        <button onClick={() => props.onEdit("Edit")}>Edit</button>
+      <div style={detailsDiv}>
+        <div>{props.details.name}</div>
+        <div>{props.details.brand}</div>
+        <div>{props.details.price}</div>
+        <div>{props.details.alcoholContent}</div>
+        <div>{(props.details.pints <= 0) ? "Out Of Stock" : ("pints: " + props.details.pints)}</div>
       </div>
+      
     </div>
 
   );
