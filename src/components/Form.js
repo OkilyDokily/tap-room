@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid'
 
 Form.propTypes = {
-  edit:PropTypes.object,
+  edit: PropTypes.object,
   onAddKegs: PropTypes.func
 };
 
@@ -29,28 +29,29 @@ function Form(props) {
       props.onAddKeg(obj);
     }
   }
+
+  const formStyle = {
+    margin: "auto",
+    textAlign: "center"
+  }
+
+  const kegAddEditButton ={
+    width: "192px",
+    marginTop:"16px",
+    padding: "10px"
+  }
+
   return (
-    <div>
-      <form onSubmit={addKeg}>
-        <div >
-          <label>Name</label>
-          <input type="text" id="name" defaultValue={props.edit.edit ? props.edit.details.name : null} />
-        </div>
-        <div >
-          <label>Brand</label>
-          <input type="text" id="brand" defaultValue={props.edit.edit ? props.edit.details.brand : null} />
-        </div>
-        <div >
-          <label>Price</label>
-          <input type="number" step="0.01" id="price" defaultValue={props.edit.edit ? props.edit.details.price : null} />
-        </div>
-        <div >
-          <label>Alcohol Content</label>
-          <input type="number" step="0.01" id="alcoholcontent" defaultValue={props.edit.alcoholContent ? props.edit.details.name : null} />
-        </div>
-        <input type="submit" id="kegs" value={props.edit.edit ? "Edit Keg" : "Add Keg"} />
-      </form>
-    </div>
+
+    <form style={formStyle} onSubmit={addKeg}>
+      <input placeholder="Name" type="text" id="name" defaultValue={props.edit.edit ? props.edit.details.name : null} />
+      <input placeholder="Brand" type="text" id="brand" defaultValue={props.edit.edit ? props.edit.details.brand : null} />
+      <input placeholder="Price" type="number" step="0.01" id="price" defaultValue={props.edit.edit ? props.edit.details.price : null} />
+      <input placeholder="Alcohol Content" type="number" step="0.01" id="alcoholcontent" defaultValue={props.edit.edit ? props.edit.details.alcoholContent : null} />
+
+      <input style={kegAddEditButton} type="submit" id="kegs" value={props.edit.edit ? "Edit Keg" : "Add Keg"} />
+    </form>
+
   );
 }
 

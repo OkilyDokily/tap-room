@@ -13,7 +13,6 @@ function Details(props) {
     display: "grid",
     width: "100%",
     marginBottom: "4px",
-    border: "solid black 1px",
     padding: "4px",
     paddingRight: "0",
     gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr"

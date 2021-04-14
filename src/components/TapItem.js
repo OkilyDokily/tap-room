@@ -6,37 +6,35 @@ TapItem.propTypes = {
 };
 
 
-const tapItemDiv = {
-  display: "grid",
-  width: "100%",
-  marginBottom: "4px",
-  border:"solid black 1px",
-  padding: "4px",
-  paddingRight: "0",
-  gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr"
+const button = {
+  display: "block",
+  textAlign:"center",
+  justifySelf:"center",
+  color:"white",
+  backgroundColor:"red",
+  userSelect: "none"
 }
 
-const button = {
-  display:"block",
-  width:"100%",
-  marginTop:"-4px",
-  marginBottom:"-4px",
-  marginRight:"0"
-} 
+const div = {
+  width: "100%",
+}
+
 
 function TapItem(props) {
   return (
-    <div >
-      <div class="tap-item-details" style={tapItemDiv} onClick={() => props.showDetails(props.details.id)}>
-        <div>{props.details.name}</div>
-        <div>{props.details.brand}</div>
-        <div>{props.details.price}</div>
-        <div>{props.details.alcoholContent}</div>
-        <div>{(props.details.pints <= 0) ? "Out Of Stock" : ("pints: " + props.details.pints)}</div>
-        <button style={button} onClick={(e) => {e.stopPropagation(); props.purchasePint(props.details.id)}}>Purchase Pint</button>
+    <React.Fragment>
+
+      <div style={div} onClick={() => props.showDetails(props.details.id)}>{props.details.name}</div>
+      <div style={div} onClick={() => props.showDetails(props.details.id)}>{props.details.brand}</div>
+      <div style={div} onClick={() => props.showDetails(props.details.id)}>{props.details.price}</div>
+      <div style={div} onClick={() => props.showDetails(props.details.id)}>{props.details.alcoholContent}</div>
+      <div style={div} onClick={() => props.showDetails(props.details.id)}>{(props.details.pints <= 0) ? "Out Of Stock" : ("pints: " + props.details.pints)}</div>
+
+      <div style={{...div,...button}} onClick={(e) => { e.stopPropagation(); props.purchasePint(props.details.id)}}>
+       Purchase Pint
       </div>
-     
-    </div>
+
+    </React.Fragment>
   );
 }
 

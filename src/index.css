@@ -1,11 +1,20 @@
-.tap-item-details div{
-  justify-self: start;
-}
 
-
-.tap-item-details:hover:not(#tap-names){
+/* .tap-item-details:hover:not(#tap-names){
    border:solid 3px rgb(216, 33, 33) !important;
    color: green;
+} */
+
+#tap-list div:hover{
+  cursor: pointer;
+}
+
+input {
+  padding:10px;
+  border-radius:10px;
+  display: block;
+  margin:auto;
+  margin-bottom: 5px;
+  outline: none
 }
 
 #details-buttons button:first-child{

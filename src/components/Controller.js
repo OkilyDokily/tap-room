@@ -91,18 +91,12 @@ export default class Controller extends Component {
       marginTop: "10px"
     }
 
-    const returnToListButton = {
-      display:"block",
-      width:"100%"
-
-    }
     switch (this.state.currentView) {
       case "TapList":
         return (
-          <div>
-            <TapList onPurchasePint={this.handlePurchasePint} onShowDetails = {this.handleShowDetails} tapList={this.state.tapList} />
-            <button style={tapListButton} onClick={()=>this.changeCurrentView("Form")}>Add Keg</button>
-          </div>
+          <React.Fragment>
+            <TapList goToAddForm={this.changeCurrentView.bind(null,"Add")} onPurchasePint={this.handlePurchasePint} onShowDetails = {this.handleShowDetails} tapList={this.state.tapList} />
+          </React.Fragment>
         )
       case "Details":
         return (
@@ -116,10 +110,11 @@ export default class Controller extends Component {
             <button style={tapListButton} onClick={() => this.changeCurrentView("TapList")}>Return to List</button>
           </div>
         )
-      case "Form":
+      case "Add":
         return (
           <div>
             <Form edit={false} onAddKeg={this.handleAddKeg}/>
+            <button style={tapListButton} onClick={() => this.changeCurrentView("TapList")}>Return to List</button>
           </div>
         )
       case "Edit":
