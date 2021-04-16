@@ -1,11 +1,16 @@
 
-/* .tap-item-details:hover:not(#tap-names){
-   border:solid 3px rgb(216, 33, 33) !important;
-   color: green;
-} */
 
 #tap-list div:hover{
   cursor: pointer;
+}
+
+.contents:hover > div{
+  border-bottom: 1px solid red;
+}
+
+#delete:hover{
+  background-color: #ed4c4c !important;
+  border:solid red 1px !important;
 }
 
 input {
@@ -14,7 +19,8 @@ input {
   display: block;
   margin:auto;
   margin-bottom: 5px;
-  outline: none
+  outline: none;
+  background-color: white;
 }
 
 #details-buttons button:first-child{
@@ -27,3 +33,14 @@ input {
   margin-left: 4px;
   flex-grow: 1;
 }
+
+#item-button:hover{
+  transform: scale(1.01);
+
+}
+
+#keg-add-edit-button:hover, .edit-and-delete-buttons:hover, #add-keg:hover,.return-to-list-button:hover {
+  border: 2px ridge rgb(228, 217, 217) !important;
+  background-color: #F0F0F0	 !important;
+}
+

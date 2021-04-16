@@ -11,6 +11,8 @@ function Details(props) {
 
   const detailsDiv = {
     display: "grid",
+    fontFamily: 'Gruppo',
+    fontWeight:"bold",
     width: "100%",
     marginBottom: "4px",
     padding: "4px",
@@ -21,6 +23,9 @@ function Details(props) {
   const nameDiv = {
     ...detailsDiv,
     border:"none",
+    fontFamily: 'space mono',
+    fontWeight:"normal",
+    fontSize:"12px",
     borderBottom:"solid black 1px"
   }
 
@@ -39,9 +44,8 @@ function Details(props) {
         <div>{props.details.brand}</div>
         <div>{props.details.price}</div>
         <div>{props.details.alcoholContent}</div>
-        <div>{(props.details.pints <= 0) ? "Out Of Stock" : ("pints: " + props.details.pints)}</div>
+        <div>{(props.details.pints <= 0) ? "Out Of Stock" :  props.details.pints}</div>
       </div>
-      
     </div>
 
   );

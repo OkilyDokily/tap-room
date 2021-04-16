@@ -20,7 +20,7 @@ function Form(props) {
       brand: document.getElementById("brand").value,
       price: parseFloat(document.getElementById("price").value),
       alcoholContent: parseFloat(document.getElementById("alcoholcontent").value),
-      pints: 124,
+      pints: (props.edit.edit) ? parseInt(document.getElementById("pints").value) : 124,
     }
     if (props.edit.edit) {
       props.onEditKeg(obj)
@@ -36,9 +36,11 @@ function Form(props) {
   }
 
   const kegAddEditButton ={
-    width: "192px",
+    width: "206px",
     marginTop:"16px",
-    padding: "10px"
+    padding: "10px",
+    backgroundColor:"white",
+    cursor:"pointer"
   }
 
   return (
@@ -48,8 +50,8 @@ function Form(props) {
       <input placeholder="Brand" type="text" id="brand" defaultValue={props.edit.edit ? props.edit.details.brand : null} />
       <input placeholder="Price" type="number" step="0.01" id="price" defaultValue={props.edit.edit ? props.edit.details.price : null} />
       <input placeholder="Alcohol Content" type="number" step="0.01" id="alcoholcontent" defaultValue={props.edit.edit ? props.edit.details.alcoholContent : null} />
-
-      <input style={kegAddEditButton} type="submit" id="kegs" value={props.edit.edit ? "Edit Keg" : "Add Keg"} />
+      {props.edit.edit ? <input  type="number" step="1" id="pints" defaultValue={props.edit.details.pints} /> : null}
+      <input style={kegAddEditButton} type="submit" id="keg-add-edit-button" value={props.edit.edit ? "Edit Keg" : "Add Keg"} />
     </form>
 
   );
