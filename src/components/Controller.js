@@ -171,14 +171,14 @@ export default class Controller extends Component {
       case "Add":
         return (
           <React.Fragment>
-            <Form edit={false} onAddKeg={this.handleAddKeg} />
+            <Form edit={{edit:false}} onAddKeg={this.handleAddKeg} />
             <button className="return-to-list-button" style={returnToListButton} onClick={() => this.changeCurrentView("TapList")}>Return to List</button>
           </React.Fragment>
         )
       case "Edit":
         return (
           <React.Fragment>
-            <Form edit={{ edit: true, details: this.state.details }} onEditKeg={this.handleEditKeg} />
+            <Form edit={{edit: true, details: this.state.details }} onEditKeg={this.handleEditKeg} />
             <button className="return-to-list-button" style={returnToListButton} onClick={() => this.changeCurrentView("TapList")}>Return to List</button>
           </React.Fragment>
         )

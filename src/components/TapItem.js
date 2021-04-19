@@ -9,6 +9,8 @@ TapItem.propTypes = {
 
 
 const button = {
+  width: "90%",
+  float:"right",
   display: "block",
   textAlign: "center",
   justifySelf: "center",
@@ -31,8 +33,8 @@ const contents = {
 }
 
 const lastBottom = {
-  width:"50%",
-  minWidth:"content"
+  whiteSpace: "nowrap",
+  maxWidth:"content"
 }
 
 
