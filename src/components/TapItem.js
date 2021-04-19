@@ -33,11 +33,10 @@ const contents = {
 }
 
 const lastBottom = {
+  width: "auto !important",
   whiteSpace: "nowrap",
-  maxWidth:"content"
+  maxWidth:"content !important"
 }
-
-
 
 function TapItem(props) {
   var formatter = new Intl.NumberFormat('en-US', {
