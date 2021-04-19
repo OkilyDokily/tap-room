@@ -6,13 +6,13 @@ import Modal from 'react-modal';
 
 export default class Controller extends Component {
   constructor() {
-
+   
     let obj = {
       id: 1,
       name: "Sam Goody",
       brand: "Excellence",
       price: 6.95,
-      alcoholContent: .85,
+      alcoholContent: 8.5,
       pints: 124
     }
 
@@ -20,8 +20,8 @@ export default class Controller extends Component {
       id: 2,
       name: "Caviar Island",
       brand: "Partition",
-      price: 8.95,
-      alcoholContent: .90,
+      price:8.95,
+      alcoholContent: 9,
       pints: 124
     }
     super()
@@ -75,33 +75,28 @@ export default class Controller extends Component {
     this.setState({ Pints: result.pints })
   }
 
-  openModal() {
-    console.log("opened")
+  openModal = () => {
     this.setIsOpen(true);
   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    console.log("afteopenmodal");
-  }
-
-  closeModal() {
+  closeModal = () => {
     this.setIsOpen(false);
   }
 
-  setIsOpen(isOpen) {
+  setIsOpen = (isOpen) => {
     this.setState({ isOpen: isOpen });
   }
 
   render() {
     const customStyles = {
       content: {
-        top: '50%',
+        top: '33%',
         left: '50%',
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
+        transform: 'translate(-50%, -50%)',
+        padding: "10px"
       }
     };
 
@@ -135,6 +130,10 @@ export default class Controller extends Component {
       backgroundColor: "#e6dcdc"
     }
 
+    const yesAndNoButtons = {
+      display: "flex"
+    }
+
     switch (this.state.currentView) {
       case "TapList":
         return (
@@ -143,7 +142,6 @@ export default class Controller extends Component {
           </React.Fragment>
         )
       case "Details":
-        // () => this.handleDeleteKeg(this.state.details.id)
         return (
           <React.Fragment>
             <Details details={this.state.details} onEdit={this.changeCurrentView} />
@@ -155,17 +153,16 @@ export default class Controller extends Component {
             <button className="return-to-list-button" style={returnToListButton} onClick={() => this.changeCurrentView("TapList")}>Return to List</button>
             <Modal
               isOpen={this.state.isOpen}
-              onAfterOpen={this.afterOpenModal}
+              appElement={document.getElementById("root")}
               onRequestClose={this.closeModal}
               style={customStyles}
             >
-
-              {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> */}
-              <button onClick={this.closeModal}>close</button>
-              <div>Are you sure you want to delete this?</div>
               <form>
-                <button>Yes</button>
-                <button>No</button>
+                <h3>Are you sure you want to delete this item?</h3>
+                <div id="yes-and-no-buttons" style={yesAndNoButtons}>
+                  <button onClick={() => { this.handleDeleteKeg(this.state.details.id); this.closeModal() }}>Yes</button>
+                  <button onClick={this.closeModal}>No</button>
+                </div>
               </form>
             </Modal>
 

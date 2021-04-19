@@ -4,7 +4,9 @@ import TapItem from './TapItem'
 
 TapList.propTypes = {
   tapList: PropTypes.arrayOf(PropTypes.object),
+  onPurchasePint:PropTypes.func,
   showDetails: PropTypes.func,
+  goToAddForm: PropTypes.func
 };
 
 const tapList = {
@@ -49,18 +51,16 @@ const tapListButton = {
 }
 
 
-
-
 function TapList(props) {
   return (
     <div id="tap-list" className="tap-item-details" style={tapList} >
       <div style={bottomLine}>Name</div>
       <div style={bottomLine}>Brand</div>
       <div style={bottomLine}>Price</div>
-      <div style={bottomLine}>Alcohol Content</div>
+      <div style={bottomLine}>Alcohol Content in %</div>
       <div style={lastBotton}>Pints Left</div>
       <div></div>
-      {props.tapList.map(x => <TapItem purchasePint={props.onPurchasePint} showDetails={props.onShowDetails} details={x} />)}
+      {props.tapList.map(x => <TapItem key={x.id} purchasePint={props.onPurchasePint} showDetails={props.onShowDetails} details={x} />)}
       <div></div>
       <button id="add-keg" style={tapListButton} onClick={props.goToAddForm}>Add Keg</button>
     </div>

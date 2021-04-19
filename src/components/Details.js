@@ -36,7 +36,7 @@ function Details(props) {
         <div>Name</div>
         <div>Brand</div>
         <div>Price</div>
-        <div>Alcohol Content</div>
+        <div>Alcohol Content in %</div>
         <div>Pints Left</div>
       </div>
       <div style={detailsDiv}>

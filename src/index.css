@@ -1,5 +1,3 @@
-
-
 #tap-list div:hover{
   cursor: pointer;
 }
@@ -34,9 +32,19 @@ input {
   flex-grow: 1;
 }
 
-#item-button:hover{
-  transform: scale(1.01);
+#yes-and-no-buttons button:first-child{
+  display: block;
+  flex-grow: 1;
+}
 
+#yes-and-no-buttons button:nth-child(2){
+  display: block;
+  margin-left: 5px;
+  flex-grow: 1;
+}
+
+#item-button:hover{
+  transform: scale(1.02);
 }
 
 #keg-add-edit-button:hover, .edit-and-delete-buttons:hover, #add-keg:hover,.return-to-list-button:hover {

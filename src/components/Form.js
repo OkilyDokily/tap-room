@@ -7,8 +7,6 @@ Form.propTypes = {
   onAddKegs: PropTypes.func
 };
 
-
-
 function Form(props) {
 
   const addKeg = (e) => {
@@ -46,10 +44,10 @@ function Form(props) {
   return (
 
     <form style={formStyle} onSubmit={addKeg}>
-      <input placeholder="Name" type="text" id="name" defaultValue={props.edit.edit ? props.edit.details.name : null} />
-      <input placeholder="Brand" type="text" id="brand" defaultValue={props.edit.edit ? props.edit.details.brand : null} />
-      <input placeholder="Price" type="number" step="0.01" id="price" defaultValue={props.edit.edit ? props.edit.details.price : null} />
-      <input placeholder="Alcohol Content" type="number" step="0.01" id="alcoholcontent" defaultValue={props.edit.edit ? props.edit.details.alcoholContent : null} />
+      <input placeholder="Name" type="text" id="name" defaultValue={props.edit.edit ? props.edit.details.name : null} required/>
+      <input placeholder="Brand" type="text" id="brand" defaultValue={props.edit.edit ? props.edit.details.brand : null} required/>
+      <input placeholder="Price" type="number" step="0.01" id="price" defaultValue={props.edit.edit ? props.edit.details.price : null} required/>
+      <input placeholder="Alcohol Content in %" type="number" step="0.1" id="alcoholcontent" defaultValue={props.edit.edit ? props.edit.details.alcoholContent : null} required/>
       {props.edit.edit ? <input  type="number" step="1" id="pints" defaultValue={props.edit.details.pints} /> : null}
       <input style={kegAddEditButton} type="submit" id="keg-add-edit-button" value={props.edit.edit ? "Edit Keg" : "Add Keg"} />
     </form>

@@ -1,3 +1,45 @@
+# _Tap Room_
+
+#### _This demonstrates beginner level javascript/React._
+
+#### By _**Matthew**_
+
+
+## Description
+
+_A tap room made with React._
+_Lets the users add Kegs to a tap room_
+     
+## Setup/Installation Requirements
+_clone the repo_
+_See the getting started with react app
+
+## Known Bugs
+
+_I don't think there are any bugs but please tell me if you see any._
+
+## Support and contact details
+
+_Open a Github issue if you see a problem or have questions_
+
+## Technologies Used
+
+_React, HTML, CSS, Javascript_
+
+## Component Graph
+<img src="./Diagram.png"
+     alt="component diagram"
+     style="float: left; margin-right: 10px;" />
+
+### License
+
+*Feel free to use this code as you please*
+
+Copyright (c) 2020 **_Matthew_**
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
