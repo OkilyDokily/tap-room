@@ -11,7 +11,7 @@ _A tap room made with React._
 _Lets the users add Kegs to a tap room_
      
 ## Setup/Installation Requirements
-* clone the repo_
+* clone the repo
 * navigate to the repo in your terminal 
 * enter `npm install` (this will install the necessary packages)
 * enter `npm start` this will start the program
