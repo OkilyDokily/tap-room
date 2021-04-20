@@ -6,7 +6,6 @@ Details.propTypes = {
 };
 
 
-
 function Details(props) {
 
   const detailsDiv = {
@@ -28,7 +27,6 @@ function Details(props) {
     fontSize:"12px",
     borderBottom:"solid black 1px"
   }
-
 
   return (
     <div id="details">

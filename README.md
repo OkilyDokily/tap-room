@@ -2,7 +2,7 @@
 
 #### _This demonstrates beginner level javascript/React._
 
-#### By _**Matthew**_
+#### By _**Matthew LeDoux**_
 
 
 ## Description
@@ -12,7 +12,7 @@ _Lets the users add Kegs to a tap room_
      
 ## Setup/Installation Requirements
 _clone the repo_
-_navigate to the repo in your terminal and enter npm install"
+_navigate to the repo in your terminal and enter npm install_
 
 _See the getting started with react app section for more info_
 
@@ -37,9 +37,7 @@ _React, HTML, CSS, Javascript_
 
 *Feel free to use this code as you please*
 
-Copyright (c) 2020 **_Matthew_**
-
-
+Copyright (c) 2020 **_Matthew LeDoux_**
 
 
 # Getting Started with Create React App
