@@ -12,7 +12,9 @@ _Lets the users add Kegs to a tap room_
      
 ## Setup/Installation Requirements
 _clone the repo_
-_See the getting started with react app
+_navigate to the repo in your terminal and enter npm install"
+
+_See the getting started with react app section for more info_
 
 ## Known Bugs
 
