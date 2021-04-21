@@ -48,8 +48,8 @@ function Form(props) {
       <input placeholder="Brand" type="text" id="brand" defaultValue={props.edit.edit ? props.edit.details.brand : null} required/>
       <input placeholder="Price" type="number" step="0.01" id="price" defaultValue={props.edit.edit ? props.edit.details.price : null} required/>
       <input placeholder="Alcohol Content in %" type="number" step="0.1" id="alcoholcontent" defaultValue={props.edit.edit ? props.edit.details.alcoholContent : null} required/>
-      {props.edit.edit ? <input  type="number" step="1" id="pints" defaultValue={props.edit.details.pints} /> : null}
-      <input style={kegAddEditButton} type="submit" id="keg-add-edit-button" value={props.edit.edit ? "Edit Keg" : "Add Keg"} required/>
+      {props.edit.edit ? <input  type="number" step="1" id="pints" defaultValue={props.edit.details.pints} required/> : null}
+      <input style={kegAddEditButton} type="submit" id="keg-add-edit-button" value={props.edit.edit ? "Edit Keg" : "Add Keg"}/>
     </form>
 
   );
